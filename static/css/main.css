@@ -1,21 +1,35 @@
 body, html {
     margin: 0;
     font-family: sans-serif;
-} .content {
+}
+
+.content {
     margin: 0 auto;
     width: 400px;
-} table, td, th {
+}
+
+table, td, th {
     border: 1px solid #aaa;
-} table {
+}
+
+table {
     border-collapse: collapse;
     width: 100%;
-} th {
+}
+
+th {
     height: 30px;
-} td {
+}
+
+td {
     text-align: center;
     padding: 5px;
-} .form {
+}
+
+.form {
     margin-top: 20px;
-} #content {
+}
+
+#content {
     width: 70%;
 }
