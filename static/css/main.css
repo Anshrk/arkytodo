@@ -1,6 +1,18 @@
 body, html {
-    margin: 0;
+    background-color: #fc0;
+    padding: 0px;
+    margin: 0px;
     font-family: sans-serif;
+}
+
+header {
+    background-color: #ffa600;
+    display: flex;
+    justify-content: space-between;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    width: 100%;
 }
 
 .content {
@@ -8,28 +20,164 @@ body, html {
     width: 400px;
 }
 
+.logo {
+    flex-grow: 3;
+    position: relative;
+    padding: 20px 20px 10px 10px;
+
+}
+
+#Ansh-logo:hover {
+    transform: scale(1.1);
+}
+
+.h-items {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 10px 10px;
+
+}
+
+.h-item:hover {
+    transform: scale(1.2);
+}
+
+.text-1 {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter;
+    display: inline-block;
+    position: relative;
+    animation-duration:4s;
+    animation-timing-function: steps(50, end);
+    animation-iteration-count: infinite;
+}
+
+.text-1::after {
+    content: " _";
+    position: absolute;
+    right: 0;
+    animation: caret infinite;
+    animation-duration: 1s;
+    animation-timing-function: steps(1, end);
+}
+@keyframes typewriter {
+    0%, 100% {
+        width: 0;
+    }
+    20%, 80% {
+        width: 5.3em;
+    }
+}
+
+@keyframes caret {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
 table, td, th {
     border: 1px solid #aaa;
 }
 
 table {
-    border-collapse: collapse;
     width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
 }
 
 th {
     height: 30px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
 }
 
 td {
     text-align: center;
     padding: 5px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
 }
 
 .form {
     margin-top: 20px;
+    transform: translate(-50%, -50%);
 }
 
 #content {
     width: 70%;
+}
+
+#discord-logo {
+    max-width: 100px;
+    height: auto;
+}
+
+#github-logo {
+    max-width: 80px;
+    height: auto;
+}
+
+input {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: .5s;
+    height: 35;
+}
+input[type="text"] {
+    background: #fff;
+    border-color: black;
+    border-style: solid;
+    border-width: 2;
+    border-radius: 17.5px 0 0 17.5px;
+}
+
+input[type="submit"] {
+    cursor: pointer;    
+    background: #FFA600;
+    border-radius: 0 17.5px 17.5px 0;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    color: #000;
 }

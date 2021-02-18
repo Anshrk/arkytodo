@@ -5,37 +5,73 @@
 {% endblock %}
 
 {% block body %}
-<div class="content">
+    <header>
+        
+        <div class="logo">
+            <a href="#">
+                <img src="static/images/Logo.svg" alt="Logo of the website" id="Ansh-logo">
+            </a>
+        </div>
+        
+        <div class="h-items">
+            <a href="https://github.com/anshrk" id="github-link" target="_blank" class="h-item">
+                <img src="static/images/github.svg" id="github-logo" alt="instagram">
+            </a>
 
-    <h1 style="text-align: center;">Quotes from Friends!</h1>
-    
-    {% if tasks|length < 1%}
-    <h4 style="text-align: center;">There are no Quotes. Create one below.</h4>
-    {% else %}
+            <a href="https://www.instagram.com/ansh_r_k/" id="instagram-link" target="_blank" class="h-item">
+                <img src="static/images/instagram.svg" id="instagram-logo" alt="instagram">
+            </a>
 
-    <table>
-        <tr>
-            <th>Task</th>
-            <th>Added</th>
-            <th>Action</th>
-        </tr>
-        {% for task in tasks %}
-            <tr>
-                <td>{{ task.content }}</td>
-                <td>{{ task.date_created.date() }}</td>
-                <td>
-                    <a href="/update/{{task.id}}">Update</a>
-                    <br>
-                    <a href="/delete/{{task.id}}">Delete</a>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
-    {% endif %}
+            <a href="https://twitter.com/AnshKas24782504" id="twitter-link" target="_blank" class="h-item">
+                <img src="static/images/twitter.svg" id="twitter-logo" alt="twitter">
+            </a>
 
-    <form action="/" method="POST">
-        <input type="text" name="content" id="content">
-        <input type="submit" value="Add Task">
-    </form>
-</div>
+            <a href="#" id="discord-link" target="_blank" class="h-item">
+                <img id="discord-logo" src="static/images/discord.svg" alt="discord">
+            </a>
+
+            <a href="#" id="youtube-link" target="_blank" class="h-item">
+                <img id="youtube-logo" src="static/images/youtube.svg" alt="youtube">
+            </a>
+        </div>
+        
+    </header>
+    <div class="content">
+       
+        
+        <h1 class="text-1" style="text-align: center;">ToDo App</h1>
+        
+        {% if tasks|length < 1%}
+        <h4 style="text-align: center;">There are no Quotes. Create one below.</h4>
+        {% else %}
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Added</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                    <tr>
+                        <td>{{ task.content }}</td>
+                        <td>{{ task.date_created.date() }}</td>
+                        <td>
+                            <a href="/update/{{task.id}}">Update</a>
+                            <br>
+                            <a href="/delete/{{task.id}}">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+
+        <form action="/" method="POST">
+            <input type="text" name="content" id="content" placeholder=" Your task...">
+            <input type="submit" value="Add Task">
+        </form>
+    </div>
 {% endblock %}
